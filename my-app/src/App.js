@@ -12,7 +12,7 @@ function App() {
   const [startGame, setStartGame] = React.useState(true);
   const [answerState, setAnswerState] = React.useState(true);
   React.useEffect(() => {
-    fetch("https://opentdb.com/api.php?amount=3&difficulty=easy")
+    fetch("https://opentdb.com/api.php?amount=6&difficulty=easy")
         .then(res => res.json())
         .then(data => setData(data.results))
 }, [answerState]
@@ -72,7 +72,7 @@ console.log(data)
             prev[i].answers[j].isClicked = true;
 
             for (let k = 0; k < prev[i].answers.length; k++) {
-              if (k == j) {
+              if (k === j) {
                 continue;
               }
               prev[i].answers[k].isClicked = false;
@@ -119,7 +119,7 @@ console.log(data)
       <div className="resultContainer">
         {!answerState && (
           <h1 className="question_title">
-            Valdek scored {rightAnswers}/{result.length} correct answers
+            Valdek scored {rightAnswers}/{data.length} correct answers
           </h1>
         )}
         {answerState && (
