@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css?family=Karla:regular,bold,italic&subset=latin,latin-ext");
+
+.question_container {
+  color: #293264;
+  font-family: "Karla";
+  border-bottom: 1px solid #dbdef0;
+  width: 80%;
+  margin-left: 5%;
+}
+.answers_container {
+  display: flex;
+}
+.question_title {
+  color: #293264;
+  font-family: "Karla";
+}
+.answerButton {
+  color: #293264;
+  height: 3em;
+  min-width: 6em;
+  margin-left: 3%;
+  margin-bottom: 5%;
+  border-radius: 1em;
+  font-size: 1em;
+  font-weight: bold;
+}
+.checkAnswersButton {
+  color: white;
+  background-color: #4d5b9e;
+  font-size: 1em;
+  height: 4em;
+  margin-top: 5%;
+  margin-left: 35%;
+  border-radius: 1em;
+  border: none;
+  cursor: pointer;
+}
+.playAgainButton {
+  color: white;
+  background-color: #4d5b9e;
+  font-size: 1em;
+  height: 4em;
+  margin-top: 5%;
+  border-radius: 1em;
+  border: none;
+  cursor: pointer;
+}
+
+button:active {
+  -webkit-box-shadow: inset 0px 0px 3px;
+  -moz-box-shadow: inset 0px 0px 3px;
+  box-shadow: inset 0px 0px 3px;
+}
+
+.resultContainer {
+  display: flex;
+  align-items: center;
+}
+.question_title{
+    color: #293264;
+    font-family: "Karla";
+    margin: 5%;
+}
+.intro{
+    position:fixed;
+    padding:0;
+    margin:0;
+
+    top:0;
+    left:0;
+
+    width: 100%;
+    height: 100%;
+   background-color: white;
+}
+
+.startQuizButton{
+    color: white;
+    background-color: #4d5b9e;
+    font-size: 2em;
+    height: 4em;
+    margin-top: 5%;
+    border-radius: 1em;
+    border: none;
+    cursor: pointer;
+}
+.intro{
+    text-align: center;
+  
+}
+
+h1{ 
+    color: #293264;
+    font-family: "Karla";
+    
+}
+h2{
+    margin: 5%;
+    color: #293264;
+    font-family: "Karla";
+}
+
+img:hover {
+    /* Start the shake animation and make the animation last for 0.5 seconds */
+    animation: shake 0.5s;
+  
+    /* When the animation is finished, start again */
+    animation-iteration-count: infinite;
+  }
+  
+  @keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
