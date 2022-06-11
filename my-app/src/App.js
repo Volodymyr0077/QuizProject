@@ -6,25 +6,24 @@ import React from "react";
 import { nanoid } from "nanoid";
 
 function App() {
-  
-  
-  const [data,setData]=React.useState(Data)
+
+
+  const [data, setData] = React.useState(Data);
   const [startGame, setStartGame] = React.useState(true);
   const [answerState, setAnswerState] = React.useState(true);
   React.useEffect(() => {
-    fetch("https://opentdb.com/api.php?amount=6&difficulty=easy")
-        .then(res => res.json())
-        .then(data => setData(data.results))
-}, [answerState]
-)
+    fetch("https://opentdb.com/api.php?amount=3&difficulty=easy")
+      .then((res) => res.json())
+      .then((data) => setData(data.results));
+  }, [answerState]);
 
-console.log(data)
-  
+  console.log(data);
+
   const result = data.map((each) => {
     return {
       id: nanoid(),
       question: each.question,
-      
+
       answers: each.incorrect_answers.map((every) => {
         return {
           id: nanoid(),
@@ -35,7 +34,7 @@ console.log(data)
       }),
     };
   });
-  
+
   for (let i = 0; i < Data.length; i++) {
     result[i].answers.splice(Math.floor(Math.random() * result.length + 1), 0, {
       id: nanoid(),
@@ -47,17 +46,17 @@ console.log(data)
 
   const [questions, setQuestions] = React.useState(result);
   const [rightAnswers, setRightAnswers] = React.useState(0);
-  
+
   function generateQuestions() {
     return questions.map((each) => {
       return (
         <Question
-        key={each.id}
-        id={each.id}
-        questionText={each.question}
-        answers={each.answers}
-        answerState={answerState}
-        updateClickState={updateClickState}
+          key={each.id}
+          id={each.id}
+          questionText={each.question}
+          answers={each.answers}
+          answerState={answerState}
+          updateClickState={updateClickState}
         />
       );
     });

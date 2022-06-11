@@ -20,6 +20,16 @@ export default function Question(props) {
     });
   }
 
+function decodedQuestion(){
+
+  const parser = new DOMParser();
+  const decodedString = parser.parseFromString(
+    `<!doctype html><body>${questionText}`,
+    "text/html"
+    ).body.textContent;
+    return decodedString;
+  }
+
   const buttonList = buttons.map((each) => {
     return (
       <AnswerButton
@@ -34,7 +44,7 @@ export default function Question(props) {
 
   return (
     <div className="question_container">
-      <h1 className="question_title">{questionText}</h1>
+      <h1 className="question_title">{decodedQuestion()}</h1>
       <div className="answers_container">{buttonList}</div>
     </div>
   );
