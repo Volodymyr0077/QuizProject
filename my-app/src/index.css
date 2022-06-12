@@ -18,7 +18,6 @@
   color: #293264;
   min-height: 3em;
   width: fit-content;
- 
   margin-left: 3%;
   margin-bottom: 5%;
   border-radius: 1em;
@@ -61,15 +60,15 @@ button:active {
     color: #293264;
     font-family: "Karla";
     margin: 5%;
+    font-size: 6vw;
+  
 }
 .intro{
     position:fixed;
     padding:0;
     margin:0;
-
     top:0;
     left:0;
-
     width: 100%;
     height: 100%;
    background-color: white;
@@ -87,7 +86,6 @@ button:active {
 }
 .intro{
     text-align: center;
-    
   
 }
 

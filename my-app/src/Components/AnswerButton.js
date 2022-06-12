@@ -1,7 +1,7 @@
 import React from "react";
 
 export default function AnswerButtons(props) {
-  const { answerState, answer } = props;
+  const { answerState, answer,answerIndex,questionIndex } = props;
 
   const buttonStyle = {
     backgroundColor: `${props.answer.isClicked ? "#D6DBF5" : "#FFFF"}`,
@@ -33,6 +33,7 @@ export default function AnswerButtons(props) {
   return (
     <>
       <button
+      id={`answer_button_${questionIndex}_${answerIndex}`}
         className="answerButton"
         disabled={!answerState}
         style={answerState ? buttonStyle : answerStateButtonStyle}

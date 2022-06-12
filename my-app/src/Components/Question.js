@@ -2,7 +2,7 @@ import React from "react";
 import AnswerButton from "./AnswerButton";
 
 export default function Question(props) {
-  const { questionText, answers, answerState, updateClickState } = props;
+  const { questionText, answers, answerState, updateClickState,questionIndex } = props;
   const [buttons, setButtons] = React.useState(answers);
 
   function handleClick(id) {
@@ -30,7 +30,7 @@ function decodedQuestion(){
     return decodedString;
   }
 
-  const buttonList = buttons.map((each) => {
+  const buttonList = buttons.map((each,i) => {
     return (
       <AnswerButton
         key={each.id}
@@ -38,6 +38,8 @@ function decodedQuestion(){
         answer={each}
         handleClick={handleClick}
         answerState={answerState}
+        answerIndex={i}
+        questionIndex={questionIndex}
       />
     );
   });

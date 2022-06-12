@@ -48,7 +48,7 @@ function App() {
   const [rightAnswers, setRightAnswers] = React.useState(0);
 
   function generateQuestions() {
-    return questions.map((each) => {
+    return questions.map((each,i) => {
       return (
         <Question
           key={each.id}
@@ -57,6 +57,7 @@ function App() {
           answers={each.answers}
           answerState={answerState}
           updateClickState={updateClickState}
+          questionIndex={i}
         />
       );
     });
@@ -122,12 +123,12 @@ function App() {
           </h1>
         )}
         {answerState && (
-          <button onClick={checkAnswer} className="checkAnswersButton">
+          <button id="check_answer" onClick={checkAnswer} className="checkAnswersButton">
             Check answers
           </button>
         )}
         {!answerState && (
-          <button onClick={playAgain} className="playAgainButton">
+          <button id="play_again" onClick={playAgain} className="playAgainButton">
             Play again
           </button>
         )}
